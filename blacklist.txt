@@ -1,0 +1,2 @@
+uwsgi.worker.*.core
+uwsgi.worker.*.delta_requests
