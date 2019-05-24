@@ -1,6 +1,3 @@
-package main
-
-import (
         "fmt"
         "io/ioutil"
         "net"
@@ -22,14 +19,14 @@ func forward(addr *net.UDPAddr, stat string, blacklist []string) {
                 if(len(item) > 0) {
                         matched, err := regexp.MatchString(fmt.Sprintf("^%s", item), stat)
                         checkError(err)
-                        if !matched {
-                                targetConn, _ := net.DialUDP("udp", nil, addr)
-                                targetConn.Write([]byte(stat))
+                        if matched {
+                                return
                         }
                 }
         }
 
-
+        targetConn, _ := net.DialUDP("udp", nil, addr)
+        targetConn.Write([]byte(stat))
 }
 
 func getBlacklist() []string {
