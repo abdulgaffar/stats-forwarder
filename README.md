@@ -1,6 +1,6 @@
 # UDP Forwarder
 
-UDP Forwarder is a simple UDP packet forwarder which listen and forward from the source port to the destination port. With this utility you will be able to filter out the unwanted UDP packets before forwarding to the destination port. 
+UDP Forwarder is a simple UDP packet forwarder which listen, filter and forward from the source port to the destination port. With this utility you will be able to filter out the unwanted UDP packets before forwarding to the destination port. 
 
 This utility uses simple regex pattern to match the payload data.
 
